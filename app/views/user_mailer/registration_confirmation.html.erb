@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1>Welcome Invosales  <%= @user.name %></h1>
+    <p>
+      You have successfully signed up to <%= link_to "www.invosales.com", root_url %>,
+      your username is: <%= @user.email %>.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= signin_url%>.
+    </p>
+    <p><%= link_to "Edit profile", edit_user_url(@user) %></p>
+    <p>Your  joining and have a great day!</p>
+  </body>
+</html>
