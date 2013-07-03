@@ -6,7 +6,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    if @user.save
+      sign_in @user
+      flash[:success] = "Welcome to admin!"
+      redirect_to @user
+    else
+      render 'new'
+    end
+    
   end
 
   def new
